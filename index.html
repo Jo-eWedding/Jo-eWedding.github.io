@@ -9,7 +9,14 @@
   <title>Joe & Joanne Wedding</title>
   <!-- 
     ATTRIBUTIONS
-    Carousel by Christian Schaefer - https://codepen.io/Schepp/pen/WNbQByE
+    Carousel by W3 Schools - https://www.w3schools.com/howto/howto_js_slideshow.asp
+  -->
+
+  <!--
+    TODO:
+    A way to RSVP
+    A way to purchase stuff from the reigstry
+    Add .active to indictors
   -->
 </head>
 <body>
@@ -24,53 +31,33 @@
         <a href="" id="anchor4">Link</a>
     </div>
   </nav>
-  <section class="carousel" aria-label="Gallery">
-    <ol class="carousel__viewport">
-      <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper">
-          <a href="#carousel__slide4"   class="carousel__prev">Go to last slide</a>
-          <a href="#carousel__slide2"   class="carousel__next">Go to next slide</a>
-        </div>
-      </li>
-      <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper"></div>
-        <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
-        <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
-      </li>
-      <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper"></div>
-        <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
-        <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
-      </li>
-      <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper"></div>
-        <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
-        <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
-      </li>
-    </ol>
-    <aside class="carousel__navigation">
-      <ol class="carousel__navigation-list">
-        <li class="carousel__navigation-item">
-          <a href="#carousel__slide1" class="carousel__navigation-button">Go to slide 1</a>
-        </li>
-        <li class="carousel__navigation-item">
-          <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
-        </li>
-        <li class="carousel__navigation-item">
-          <a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
-        </li>
-        <li class="carousel__navigation-item">
-          <a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
-        </li>
-      </ol>
-    </aside>
-  </section>
+
+  <div class="slideshow-container">
+
+    <div class="mySlides fade" style="display: block;"></div>
+    <div class="mySlides fade"></div>
+    <div class="mySlides fade"></div>
+    <div class="mySlides fade"></div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+  </div>
+  <br>
+    
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"><span class="indicator"></span></span> 
+    <span class="dot" onclick="currentSlide(2)"><span class="indicator"></span></span> 
+    <span class="dot" onclick="currentSlide(3)"><span class="indicator"></span></span> 
+    <span class="dot" onclick="currentSlide(4)"><span class="indicator"></span></span> 
+  </div>
+  
   <!-- Carousel Overlay -->
     <div class="CarouselOverlay">
       <div class="OverlayCont">
-        <img src="img/Logo.png" alt="Joe and Joanne" class="title">
-        <!-- <h1 class="title">Joe &<br><span class="Title Offset">Joanne</span></h1> -->
-        <p class="date">Date: TBD</p>
+        <img src="img/Logo.png" alt="Joe and Joanne" class="title img-res">
+        <!-- <p class="date">Date: TBD</p> -->
+        <span class="TitleGlass"></span>
       </div>
     </div>
 </body>
