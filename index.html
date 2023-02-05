@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible">
   <meta name="viewport" content="initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css.css">
   <script src="js.js"></script>
   <title>Joe & Joanne Wedding</title>
@@ -19,11 +20,12 @@
     Add .active to indictors
   -->
 </head>
-<body>
+<body onload="autoSlides()">
   <nav>
     <div class="leftMenu">
-      <a href="/">HOME</a>
+      <a href="/">Joe & Joanne</a>
     </div>
+    <button id="MenuExpander" onclick="MenuExpand()"><span class="MEIcon">▼</span></button>
     <div class="rightMenu">
         <a href="" id="anchor1">Link</a>
         <a href="" id="anchor2">Link</a>
@@ -39,26 +41,26 @@
     <div class="mySlides fade"></div>
     <div class="mySlides fade"></div>
     
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
+    <a class="prev" onclick="plusSlides(-1)">◀</a>
+    <a class="next" id="next" onclick="plusSlides(1)">▶</a>
     
-  </div>
-  <br>
-    
-  <div class="dots">
-    <span class="dot" onclick="currentSlide(1)"><span class="indicator"></span></span> 
-    <span class="dot" onclick="currentSlide(2)"><span class="indicator"></span></span> 
-    <span class="dot" onclick="currentSlide(3)"><span class="indicator"></span></span> 
-    <span class="dot" onclick="currentSlide(4)"><span class="indicator"></span></span> 
+    <div class="DotParent">
+      <div class="dots">
+        <span class="dot active" onclick="currentSlide(1)"><span class="indicator"></span></span> 
+        <span class="dot" onclick="currentSlide(2)"><span class="indicator"></span></span> 
+        <span class="dot" onclick="currentSlide(3)"><span class="indicator"></span></span> 
+        <span class="dot" onclick="currentSlide(4)"><span class="indicator"></span></span> 
+      </div>
+    </div>
   </div>
   
   <!-- Carousel Overlay -->
     <div class="CarouselOverlay">
       <div class="OverlayCont">
         <img src="img/Logo.png" alt="Joe and Joanne" class="title img-res">
-        <!-- <p class="date">Date: TBD</p> -->
         <span class="TitleGlass"></span>
       </div>
     </div>
+
 </body>
 </html>

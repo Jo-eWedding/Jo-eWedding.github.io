@@ -1,14 +1,28 @@
 *{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;}
+:root{
+  --Accent1: #0477bf;
+  --Accent2: #5c0091;
+}
 body{overflow-x: hidden;}
+body::after{
+  position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
+  content:url(img/IMG_20181228_145311.jpg) url(img/DSC_0293.jpg) url(img/PXL_20230128_213922520.jpg) url(img/71697800_2682165338506904_3717268502193635328_n.jpg);   // load images
+}
+
 @font-face{
   font-family: MarchShine;
   src: url('March Shine.otf');
 }
 
+/* --------------------------------------------------------------------------- */
 .img-res{
   width: 100%;
   height: auto;
 }
+
+/* .flip{
+  transform: rotate(0.5turn);
+} */
 
 nav{
   position: fixed;
@@ -19,16 +33,94 @@ nav{
   z-index: 1000;
   background: rgba(255,255,255,.35);
   backdrop-filter: blur(5px);
+  font-size: 1.25em;
+}
+
+nav>div{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+nav>div>a{
+  padding: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+}
+
+nav>div>a:hover{
+  background: #fff;
+  color: var(--Accent1);
 }
 
 .leftMenu{
   float: left;
-  margin: auto 0;
+}
+
+.leftMenu>a{
+  font-family: MarchShine;
+  font-size: 2em;
 }
 
 .rightMenu{
   float: right;
-  margin: auto 0;
+  transition: all 1s;
+}
+
+#MenuExpander{
+  float: right;
+  display: none;
+  margin: 5px;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  background: rgba(255,255,255,.5);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#MenuExpander:hover{
+  color: var(--Accent1);
+}
+
+#MenuExpander>span{
+  transition: transform .5s;
+}
+
+@media (max-width: 500px){
+  #MenuExpander{
+    display: block;
+  }
+
+  #MenuExpander>span{
+    display: block;
+  }
+
+  #MenuExpander>span.flip{
+    transform: translate(0px, -1px) rotate(180deg);
+  }
+
+  .rightMenu{
+    float: left;
+    width: 100%;
+    height: 0px;
+    visibility: visible;
+    background: rgba(255,255,255,.35);
+    display: block;
+    overflow: hidden;
+  }
+
+  .rightMenu>a{
+    display: block;
+  }
+
+  .Expanded{
+    height: 200px;
+  }
 }
 
 .CarouselOverlay{
@@ -47,6 +139,7 @@ nav{
   text-align: center;
   color: white;
   z-index: 500;
+  margin-top: 35px;
 }
 
 .TitleGlass{
@@ -56,19 +149,15 @@ nav{
   backdrop-filter: blur(5px);
   background: rgba(255,255,255,.35);
   box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.15);
-  width: 75%;
+  width: 72%;
   height: 75%;
-  z-index: 300;
-  transform: translate(15%,-115%);
+  z-index: 2;
+  transform: translate(20%,-115%);
 }
 
 .title{
   z-index: 1000;
   position: relative;
-}
-
-.date{
-  margin: -100px auto auto 500px;
 }
 
 /* CAROUSEL */
@@ -81,6 +170,7 @@ img {vertical-align: middle;}
   height: 100vh;
   position: relative;
   margin: auto;
+  background: #000;
 }
 
 /* Next & previous buttons */
@@ -119,14 +209,26 @@ img {vertical-align: middle;}
   width: 100%;
 }
 
+.DotParent{
+  position: absolute;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  transition: top 1s;
+}
+
+.DotsExpanded{
+  top: 200px !important;
+}
+
 .dot {
   cursor: pointer;
   height: 50px;
   width: 25%;
   margin: -2px;
   display: inline-block;
-  transition: background-color 0.6s ease;
   z-index: 10;
+  transition: top .5s;
 }
 
 .dot>.indicator{
@@ -134,7 +236,7 @@ img {vertical-align: middle;}
   position: relative;
   top: 0;
   left: 0;
-  height: 1px;
+  height: 3px;
   width: 100%;
   background: rgba(255,255,255,.5);
   transition: all .5s;
@@ -142,28 +244,33 @@ img {vertical-align: middle;}
 
 .dot:hover>.indicator{
   background: #fff;
-  height: 100%;
+  height: 100% !important;
 }
 
-.indicator + .active{
+.dot.active>.indicator{
   background: #fff;
   height: 10%;
 }
 
 /* Fading animation */
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+  animation: fade 5s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
 }
 
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+@keyframes fade{
+  0%{
+    opacity: .7;
+  }
+  20%{
+    opacity: 1;
+  }
 }
 
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+@media only screen and (max-width: 500px) {
+  .prev, .next,.text {font-size: 2em}
 }
 
 .mySlides{
@@ -184,229 +291,3 @@ img {vertical-align: middle;}
 .mySlides:nth-child(4) {
   background-image: url('img/71697800_2682165338506904_3717268502193635328_n.jpg');
 }
-
-
-
-
-
-
-
-
-/* @keyframes tonext {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: 100%;
-  }
-  98% {
-    left: 100%;
-  }
-  99% {
-    left: 0;
-  }
-}
-
-@keyframes tostart {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: -300%;
-  }
-  98% {
-    left: -300%;
-  }
-  99% {
-    left: 0;
-  }
-}
-
-@keyframes snap {
-  96% {
-    scroll-snap-align: center;
-  }
-  97% {
-    scroll-snap-align: none;
-  }
-  99% {
-    scroll-snap-align: none;
-  }
-  100% {
-    scroll-snap-align: center;
-  }
-}
-
-ol, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.carousel {
-  position: relative;
-  padding-top: 75%;
-  filter: drop-shadow(0 0 10px #0003);
-  perspective: 100px;
-}
-
-.carousel__viewport {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100vh;
-  display: flex;
-  overflow-x: hidden;
-  counter-reset: item;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
-
-.carousel__slide {
-  position: relative;
-  flex: 0 0 100%;
-  width: 100%;
-  counter-increment: item;
-  background-size: cover;
-  background-position: center center;
-}
-
-.carousel__slide:nth-child(1) {
-  background-image: url('img/IMG_20181228_145311.jpg');
-}
-.carousel__slide:nth-child(2) {
-  background-image: url('img/DSC_0293.jpg');
-}
-.carousel__slide:nth-child(3) {
-  background-image: url('img/PXL_20230128_213922520.jpg');
-}
-.carousel__slide:nth-child(4) {
-  background-image: url('img/71697800_2682165338506904_3717268502193635328_n.jpg');
-}
-
-.carousel__slide:before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%,-40%,70px);
-  color: #fff;
-  font-size: 2em;
-}
-
-.carousel__snapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
-}
-
-@media (hover: hover) {
-  .carousel__snapper {
-    animation-name: tonext, snap;
-    animation-timing-function: ease;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-  }
-
-  .carousel__slide:last-child .carousel__snapper {
-    animation-name: tostart, snap;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .carousel__snapper {
-    animation-name: none;
-  }
-}
-
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
-  animation-name: none;
-}
-
-.carousel__navigation {
-  position: absolute;
-  right: 0;
-  top: 50px;
-  left: 0;
-  text-align: center;
-}
-
-.carousel__navigation-list{
-  width: 100%;
-}
-
-.carousel__navigation-item{
-  width: 25%;
-  margin: -2px;
-  height: 25px;
-  transition: height 0.25s;
-}
-
-.carousel__navigation-list,
-.carousel__navigation-item {
-  display: inline-block;
-}
-
-.carousel__navigation-button {
-  display: inline-block;
-  width: 100%;
-  height: 4%;
-  background: #fff;
-  background-clip: content-box;
-  font-size: 0;
-  transition: transform 0.1s;
-}
-
-.carousel__navigation-item:hover,.carousel__navigation-item:active,.carousel__navigation-item:focus{
-  height: 250px;
-}
-
-.carousel::before,
-.carousel::after,
-.carousel__prev,
-.carousel__next {
-  position: absolute;
-  top: 0;
-  margin-top: 47vh;
-  width: 4rem;
-  height: 4rem;
-  font-size: 0;
-  outline: 0;
-}
-
-.carousel::before,
-.carousel__prev {
-  left: 1rem;
-}
-
-.carousel::after,
-.carousel__next {
-  right: 1rem;
-}
-
-.carousel::before,
-.carousel::after {
-  content: '';
-  z-index: 1;
-  background-size: 1.5rem 1.5rem;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: #fff;
-  font-size: 2.5rem;
-  line-height: 4rem;
-  text-align: center;
-  pointer-events: none;
-}
-
-.carousel::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-}
-
-.carousel::after {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-} */

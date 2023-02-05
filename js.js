@@ -24,3 +24,16 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+function autoSlides() {
+  setTimeout(function clickNext(){
+    document.getElementById("next").click();
+    autoSlides();
+  }, 10000)
+}
+
+function MenuExpand(){
+  $('.rightMenu').toggleClass('Expanded');
+  $('.MEIcon').toggleClass('flip');
+  $('.DotParent').toggleClass('DotsExpanded');
+}
