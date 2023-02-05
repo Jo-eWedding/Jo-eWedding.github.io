@@ -73,13 +73,10 @@ nav>div>a:hover{
 #MenuExpander{
   float: right;
   display: none;
-  margin: 5px;
-  font-size: 20px;
-  height: 40px;
-  width: 40px;
-  background: rgba(255,255,255,.5);
+  margin: 12px;
+  font-size: 25px;
+  background-color: transparent;
   border: none;
-  border-radius: 5px;
   color: #fff;
 }
 
@@ -112,6 +109,7 @@ nav>div>a:hover{
     background: rgba(255,255,255,.35);
     display: block;
     overflow: hidden;
+    margin-top: -3px;
   }
 
   .rightMenu>a{
