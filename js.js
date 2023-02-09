@@ -25,11 +25,18 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+var ASTimeout;
 function autoSlides() {
-  setTimeout(function clickNext(){
-    document.getElementById("next").click();
-    autoSlides();
-  }, 10000)
+  ASTimeout = setTimeout(function(){
+    Advance(1);
+  }, 10000);
+}
+
+function Advance(direction){
+  plusSlides(direction);
+  clearTimeout(ASTimeout);
+  ASTimeout = null;
+  autoSlides();
 }
 
 function MenuExpand(){

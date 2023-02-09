@@ -169,6 +169,7 @@ img {vertical-align: middle;}
   position: relative;
   margin: auto;
   background: #000;
+  overflow-x: hidden;
 }
 
 /* Next & previous buttons */
