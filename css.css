@@ -115,6 +115,10 @@ nav>div>a:hover{
   .Expanded{
     height: 200px;
   }
+
+  .prev,.next{
+    visibility: hidden;
+  }
 }
 
 .CarouselOverlay{
@@ -237,12 +241,12 @@ img {vertical-align: middle;}
 }
 
 .dot:hover>.indicator{
-  background: #fff;
-  height: 100% !important;
+  background: rgba(255,255,255,.9);
+  height: 50% !important;
 }
 
 .dot.active>.indicator{
-  background: #fff;
+  background: rgba(255,255,255,.9);
   height: 10%;
 }
 
@@ -273,6 +277,7 @@ img {vertical-align: middle;}
   height: 100%;
 }
 
+/* Carousel Slides */
 .mySlides:nth-child(1) {
   background-image: url('img/IMG_20181228_145311.jpg');
 }

@@ -5,19 +5,20 @@
   <meta http-equiv="X-UA-Compatible">
   <meta name="viewport" content="initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="lib/pure-swipe.js"></script>
   <link rel="stylesheet" href="css.css">
   <script src="js.js"></script>
   <title>Joe & Joanne Wedding</title>
   <!-- 
     ATTRIBUTIONS
     Carousel by W3 Schools - https://www.w3schools.com/howto/howto_js_slideshow.asp
+    Pure Swipe by CSS Script - https://www.cssscript.com/detect-finger-swipe-events-javascript-pure-swipe/
   -->
 
   <!--
     TODO:
     A way to RSVP
     A way to purchase stuff from the reigstry
-    Maybe figure out swipe for carousel?
   -->
 </head>
 <body onload="autoSlides()">
@@ -55,7 +56,7 @@
   </div>
   
   <!-- Carousel Overlay -->
-    <div class="CarouselOverlay">
+    <div class="CarouselOverlay" data-swipe-threshold="20" data-swipe-timeout="500" data-swipe-ignore="false">
       <div class="OverlayCont">
         <img src="img/Logo.png" alt="Joe and Joanne" class="title img-res">
         <span class="TitleGlass"></span>
@@ -73,6 +74,13 @@
             break;
          }
       };
+
+      document.addEventListener('swiped-left', function(e) {
+        document.getElementById("next").click();
+      });
+      document.addEventListener('swiped-right', function(e) {
+        document.getElementById("prev").click();
+      });
    </script>
 </body>
 </html>
