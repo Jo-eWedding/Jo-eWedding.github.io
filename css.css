@@ -5,8 +5,8 @@
 }
 body{overflow-x: hidden;}
 body::after{
-  position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
-  content:url(img/IMG_20181228_145311.jpg) url(img/DSC_0293.jpg) url(img/PXL_20230128_213922520.jpg) url(img/71697800_2682165338506904_3717268502193635328_n.jpg);   // load images
+  position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+  content:url(img/IMG_20181228_145311.jpg) url(img/DSC_0293.jpg) url(img/PXL_20230128_213922520.jpg) url(img/71697800_2682165338506904_3717268502193635328_n.jpg);
 }
 
 @font-face{
@@ -19,10 +19,6 @@ body::after{
   width: 100%;
   height: auto;
 }
-
-/* .flip{
-  transform: rotate(0.5turn);
-} */
 
 nav{
   position: fixed;

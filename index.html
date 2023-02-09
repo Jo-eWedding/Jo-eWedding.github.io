@@ -17,7 +17,7 @@
     TODO:
     A way to RSVP
     A way to purchase stuff from the reigstry
-    Add .active to indictors
+    Maybe figure out swipe for carousel?
   -->
 </head>
 <body onload="autoSlides()">
@@ -41,7 +41,7 @@
     <div class="mySlides fade"></div>
     <div class="mySlides fade"></div>
     
-    <a class="prev" onclick="plusSlides(-1)">◀</a>
+    <a class="prev" id="prev" onclick="plusSlides(-1)">◀</a>
     <a class="next" id="next" onclick="plusSlides(1)">▶</a>
     
     <div class="DotParent">
@@ -62,5 +62,17 @@
       </div>
     </div>
 
+    <script>
+      document.onkeydown = function(event) {
+         switch (event.keyCode) {
+            case 37:
+            document.getElementById("prev").click();
+            break;
+            case 39:
+            document.getElementById("next").click();
+            break;
+         }
+      };
+   </script>
 </body>
 </html>
