@@ -32,6 +32,16 @@ nav{
   font-size: 1.25em;
 }
 
+.NavLogo{
+  height: 40px;
+  width: auto;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.75));
+}
+
+.NavLogo:hover{
+  filter: invert(52%) sepia(81%) saturate(7490%) hue-rotate(187deg) brightness(93%) contrast(97%) drop-shadow(2px 2px 3px rgba(0,0,0,0.75));
+}
+
 nav>div{
   height: 100%;
   display: flex;
@@ -43,7 +53,6 @@ nav>div>a{
   text-decoration: none;
   color: #fff;
   height: 50px;
-  line-height: 50px;
   text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
 }
 
@@ -64,6 +73,7 @@ nav>div>a:hover{
 .rightMenu{
   float: right;
   transition: all 1s;
+  line-height: 50px;
 }
 
 #MenuExpander{
@@ -75,6 +85,8 @@ nav>div>a:hover{
   background-color: transparent;
   border: none;
   color: #fff;
+  position: absolute;
+  right: 0;
 }
 
 #MenuExpander:hover{
@@ -83,42 +95,6 @@ nav>div>a:hover{
 
 #MenuExpander>span{
   transition: transform .5s;
-}
-
-@media (max-width: 500px){
-  #MenuExpander{
-    display: block;
-  }
-
-  #MenuExpander>span{
-    display: block;
-  }
-
-  #MenuExpander>span.flip{
-    transform: translate(0px, -1px) rotate(180deg);
-  }
-
-  .rightMenu{
-    float: left;
-    width: 100%;
-    height: 0px;
-    visibility: visible;
-    background: rgba(255,255,255,.35);
-    display: block;
-    overflow: hidden;
-  }
-
-  .rightMenu>a{
-    display: block;
-  }
-
-  .Expanded{
-    height: 200px;
-  }
-
-  .prev,.next{
-    visibility: hidden;
-  }
 }
 
 .CarouselOverlay{
@@ -156,6 +132,52 @@ nav>div>a:hover{
 .title{
   z-index: 1000;
   position: relative;
+}
+
+/* ------------------------------ Mobile Styles ------------------------------ */
+@media (max-width: 500px){
+  #MenuExpander{
+    display: block;
+  }
+
+  #MenuExpander>span{
+    display: block;
+  }
+
+  #MenuExpander>span.flip{
+    transform: translate(0px, -1px) rotate(180deg);
+  }
+
+  .leftMenu{
+    width: 100%;
+  }
+
+  .leftMenu>a{
+    padding: none;
+    margin: 0 auto;
+  }
+
+  .rightMenu{
+    float: left;
+    width: 100%;
+    height: 0px;
+    visibility: visible;
+    background: rgba(255,255,255,.35);
+    display: block;
+    overflow: hidden;
+  }
+
+  .rightMenu>a{
+    display: block;
+  }
+
+  .Expanded{
+    height: 200px;
+  }
+
+  .prev,.next{
+    visibility: hidden;
+  }
 }
 
 /* ------------------------------ CAROUSEL ------------------------------ */
