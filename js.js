@@ -1,3 +1,11 @@
+// NAV Code
+function MenuExpand(){
+  $('.rightMenu').toggleClass('Expanded');
+  $('.MEIcon').toggleClass('flip');
+  $('.DotParent').toggleClass('DotsExpanded');
+}
+
+// Carousel Code
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -39,8 +47,20 @@ function Advance(direction){
   autoSlides();
 }
 
-function MenuExpand(){
-  $('.rightMenu').toggleClass('Expanded');
-  $('.MEIcon').toggleClass('flip');
-  $('.DotParent').toggleClass('DotsExpanded');
-}
+document.onkeydown = function(event) {
+  switch (event.keyCode) {
+    case 37:
+    Advance(-1);
+    break;
+    case 39:
+    Advance(1);
+    break;
+  }
+};
+
+document.addEventListener('swiped-left', function(e) {
+  Advance(1);
+});
+document.addEventListener('swiped-right', function(e) {
+  Advance(-1);
+});

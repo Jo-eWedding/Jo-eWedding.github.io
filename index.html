@@ -7,7 +7,6 @@
   <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <script src="lib/pure-swipe.js"></script>
   <link rel="stylesheet" href="css.css">
-  <script src="js.js"></script>
   <title>Joe & Joanne Wedding</title>
   <!-- 
     ATTRIBUTIONS
@@ -19,7 +18,12 @@
     TODO:
     A way to RSVP
     A way to purchase stuff from the reigstry
-    Fix Banner Logo to include personalized Joe
+    Our Story Section
+    Photos Page
+    Wedding Parties Profiles
+    Timeline - horizontal scroll starts in middle
+    Travel/map/location
+    Things to do in town
   -->
 </head>
 <body onload="autoSlides()">
@@ -64,24 +68,22 @@
       </div>
     </div>
 
-    <script>
-      document.onkeydown = function(event) {
-        switch (event.keyCode) {
-          case 37:
-          Advance(-1);
-          break;
-          case 39:
-          Advance(1);
-          break;
-        }
-      };
+    <div class="content">
+      <div class="About">
+        <h1>About Us</h1>
+      </div>
+      <div class="Timeline">
+        <script>
+          function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+          }
+        </script>
+        <h1>Timeline</h1>
+        <iframe src="/timeline/timeline.html" frameborder="0" onload="resizeIframe(this)"></iframe>
+      </div>
+    </div>
 
-      document.addEventListener('swiped-left', function(e) {
-        Advance(1);
-      });
-      document.addEventListener('swiped-right', function(e) {
-        Advance(-1);
-      });
-   </script>
+
+    <script src="js.js"></script>
 </body>
 </html>

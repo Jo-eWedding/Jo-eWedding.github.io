@@ -14,7 +14,7 @@ body::after{
   src: url('March Shine.otf');
 }
 
-/* ------------------------------ CUSTOM ------------------------------ */
+/* ------------------------------ Nav ------------------------------ */
 .img-res{
   width: 100%;
   height: auto;
@@ -97,6 +97,8 @@ nav>div>a:hover{
   transition: transform .5s;
 }
 
+/* ------------------------------ Carousel Overlay ------------------------------ */
+
 .CarouselOverlay{
   position: absolute;
   top: 0;
@@ -134,7 +136,17 @@ nav>div>a:hover{
   position: relative;
 }
 
-/* ------------------------------ Mobile Styles ------------------------------ */
+/* ------------------------------ Content ------------------------------ */
+.content{
+  width: 100%;
+}
+
+.Timeline>iframe{
+  height: 100%;
+  width: 100%;
+}
+
+/* ------------------------------ Mobile ------------------------------ */
 @media (max-width: 500px){
   #MenuExpander{
     display: block;
