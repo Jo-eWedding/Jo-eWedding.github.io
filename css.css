@@ -1,7 +1,8 @@
 *{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;}
 :root{
-  --Accent1: #0477bf;
+  --Accent1: #002366;
   --Accent2: #5c0091;
+  --Gold: #FFD700;
 }
 body{overflow: overlay;}
 body::after{
@@ -166,7 +167,7 @@ nav>div>a:hover{
 
 /* ------------------------------ Content ------------------------------ */
 .ContWrapper{
-  background: #e1e1e1;
+  background: var(--Accent1);
 }
 
 .content{
@@ -174,7 +175,7 @@ nav>div>a:hover{
   max-width: 1250px;
   margin: 0 auto;
   background: #fff;
-  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.35);
   padding: 25px;
 }
 
@@ -189,7 +190,7 @@ nav>div>a:hover{
 
 .Timeline>iframe{
   width: 100vw;
-  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.35);
   margin: 10px 0;
   position: absolute;
   left: 0;
