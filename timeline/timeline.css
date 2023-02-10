@@ -2,6 +2,10 @@
   font-family: MarchShine;
   src: url('/March Shine.otf');
 }
+:root{
+  --Accent1: #0477bf;
+  --Accent2: #5c0091;
+}
 *{margin:0;padding:0;}
 
 /* width */
@@ -28,6 +32,7 @@
 body{
   overflow-x: overlay;
   overflow-y: hidden;
+  background: white;
 }
 
 .wrapper{
@@ -54,12 +59,22 @@ body{
   display: block;
   width: 8vw;
   height: 0;
-  border: 3px solid #e1e1e1;
-  border-radius: 3px;
+  border: 2px outset #e1e1e1;
   position: relative;
   left: calc(-9vw - 18px);
   top: 50%;
-  margin-bottom: -6px;
+  margin-bottom: -4px;
+  clip-path: 
+    polygon(
+      0% 50%,     /* top left */
+      2px 0%,     /* top left */
+      calc(100% - 2px) 0%,    /* top right */
+      100% 50%,   /* top right */
+      100% 50%,  /* bottom right */
+      calc(100% - 2px) 100%,  /* bottom right */
+      2px 100%,   /* bottom left */
+      0 50%      /* bottom left */
+    );
 }
 
 .event:first-child:before{

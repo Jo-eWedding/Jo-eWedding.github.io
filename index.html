@@ -51,7 +51,7 @@
     <a class="prev" id="prev" onclick="Advance(-1)">◀</a>
     <a class="next" id="next" onclick="Advance(1)">▶</a>
     
-    <div class="DotParent" id="DotParent">
+    <div class="DotParent DPAnim" id="DotParent">
       <div class="dots">
         <span class="dot active" onclick="currentSlide(1)"><span class="indicator"></span></span> 
         <span class="dot" onclick="currentSlide(2)"><span class="indicator"></span></span> 
@@ -70,18 +70,25 @@
       </div>
     </div>
 
-    <div class="content">
-      <div class="About">
-        <h1>About Us</h1>
-      </div>
-      <div class="Timeline">
-        <script>
-          function resizeIframe(obj) {
-            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-          }
-        </script>
-        <h1>Timeline</h1>
-        <iframe src="timeline/timeline.html" frameborder="0" onload="resizeIframe(this)"></iframe>
+    <div class="ContWrapper">
+      <div class="content">
+        <div class="About">
+          <h1>About Us</h1>
+        </div>
+        <div class="Timeline" id="Timeline">
+          <script>
+            function resizeIframe(obj) {
+              var Timeline = document.getElementById('Timeline');
+              obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+              Timeline.style.marginBottom = obj.contentWindow.document.documentElement.scrollHeight + 10 + 'px';
+            }
+          </script>
+          <h1>Timeline</h1>
+          <iframe src="timeline/timeline.html" frameborder="0" onload="resizeIframe(this)"></iframe>
+        </div>
+        <div class="WeddingParty">
+          <h1>Wedding Party</h1>
+        </div>
       </div>
     </div>
     <script src="js.js"></script>
