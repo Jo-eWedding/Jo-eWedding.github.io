@@ -1,3 +1,7 @@
+@font-face{
+  font-family: MarchShine;
+  src: url('/March Shine.otf');
+}
 *{margin:0;padding:0;}
 
 /* width */
@@ -39,7 +43,10 @@ body{
   float: left;
   display: inline-block;
   white-space: normal;
-  padding: 15px;
+  margin: 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.15);
 }
 
 .event::before{
@@ -50,17 +57,28 @@ body{
   border: 3px solid #e1e1e1;
   border-radius: 3px;
   position: relative;
-  left: calc(-9vw - 17.5px);
+  left: calc(-9vw - 18px);
   top: 50%;
+  margin-bottom: -6px;
 }
 
 .event:first-child:before{
   border: none;
+  margin-bottom: 0px;
 }
 
 img{
   max-width: calc(100vw - 30px);
   height: auto;
+  border-radius: 15px 15px 0 0;
+}
+
+.info{
+  padding: 15px;
+}
+
+h1{
+  font-family: MarchShine;
 }
 
 .fade{
