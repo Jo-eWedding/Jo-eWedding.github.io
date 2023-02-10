@@ -6,7 +6,7 @@
 body{overflow: overlay;}
 body::after{
   position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-  content:url(img/IMG_20181228_145311.jpg) url(img/DSC_0293.jpg) url(img/PXL_20230128_213922520.jpg) url(img/71697800_2682165338506904_3717268502193635328_n.jpg);
+  content:url(img/Prom.jpg) url(img/Arizona.jpg) url(img/BarK.jpg) url(img/Renfest.jpg) url(img/GrainsAndTap.jpg);
 }
 
 @font-face{
@@ -218,16 +218,19 @@ nav>div>a:hover{
 /* ------------------------------ CAROUSEL ------------------------------ */
 /* Carousel Slides */
 .mySlides:nth-child(1) {
-  background-image: url('img/IMG_20181228_145311.jpg');
+  background-image: url('img/Prom.jpg');
 }
 .mySlides:nth-child(2) {
-  background-image: url('img/DSC_0293.jpg');
+  background-image: url('img/Arizona.jpg');
 }
 .mySlides:nth-child(3) {
-  background-image: url('img/PXL_20230128_213922520.jpg');
+  background-image: url('img/BarK.jpg');
 }
 .mySlides:nth-child(4) {
-  background-image: url('img/71697800_2682165338506904_3717268502193635328_n.jpg');
+  background-image: url('img/Renfest.jpg');
+}
+.mySlides:nth-child(5) {
+  background-image: url('img/GrainsAndTap.jpg');
 }
 
 .mySlides {display: none}
@@ -303,7 +306,7 @@ img {vertical-align: middle;}
 .dot {
   cursor: pointer;
   height: 50px;
-  width: 25%;
+  width: 20%;
   margin: -2px;
   display: inline-block;
   z-index: 10;

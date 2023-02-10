@@ -15,6 +15,7 @@ function plusSlides(n) {
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
+  ResetTimeout();
 }
 
 function showSlides(n) {
@@ -44,6 +45,11 @@ function autoSlides() {
 // Advance the carousel
 function Advance(direction){
   plusSlides(direction);
+  ResetTimeout();
+}
+
+// Reset the Timeout Delay
+function ResetTimeout(){
   clearTimeout(ASTimeout);
   ASTimeout = null;
   autoSlides();
