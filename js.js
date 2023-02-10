@@ -33,6 +33,7 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+// Carousel Auto Slide
 var ASTimeout;
 function autoSlides() {
   ASTimeout = setTimeout(function(){
@@ -40,6 +41,7 @@ function autoSlides() {
   }, 10000);
 }
 
+// Advance the carousel
 function Advance(direction){
   plusSlides(direction);
   clearTimeout(ASTimeout);
@@ -47,6 +49,7 @@ function Advance(direction){
   autoSlides();
 }
 
+// Detect Arrow key for Carousel
 document.onkeydown = function(event) {
   switch (event.keyCode) {
     case 37:
@@ -58,9 +61,24 @@ document.onkeydown = function(event) {
   }
 };
 
+// Detect Swipe on Carousel
 document.addEventListener('swiped-left', function(e) {
   Advance(1);
 });
 document.addEventListener('swiped-right', function(e) {
   Advance(-1);
+});
+
+window.addEventListener("scroll", function() {
+  var elementTarget = document.getElementById("CarouselOverlay");
+  var DotParent = document.getElementById("DotParent");
+  if (window.scrollY > ((elementTarget.offsetTop + elementTarget.offsetHeight)-50)) {
+      DotParent.classList.add("stuck");
+      DotParent.classList.remove("DPAnim");
+  } else {
+    DotParent.classList.remove("stuck");
+    this.setTimeout(function(){
+      DotParent.classList.add("DPAnim");
+    }, 1000)
+  }
 });

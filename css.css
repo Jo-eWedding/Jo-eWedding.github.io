@@ -51,6 +51,7 @@ nav{
   background: rgba(255,255,255,.35);
   backdrop-filter: blur(5px);
   font-size: 1.25em;
+  z-index: 10001;
 }
 
 .NavLogo{
@@ -170,31 +171,6 @@ nav>div>a:hover{
 
 /* ------------------------------ Mobile ------------------------------ */
 @media (max-width: 500px){
-  body{
-    overflow-x: hidden;
-  }
-
-  /* width */
-  ::-webkit-scrollbar {
-    width: auto;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: auto; 
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: auto; 
-    border-radius: auto;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: auto; 
-  }
-
   #MenuExpander{
     display: block;
   }
@@ -309,7 +285,15 @@ img {vertical-align: middle;}
   top: 0;
   height: 100px;
   width: 100%;
+}
+
+.DPAnim{
   transition: top 1s;
+}
+
+.stuck{
+  position: absolute;
+  top: calc(100vh - 55px);
 }
 
 .DotsExpanded{
