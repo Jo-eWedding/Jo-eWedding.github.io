@@ -88,3 +88,10 @@ window.addEventListener("scroll", function() {
     }, 1000)
   }
 });
+
+//Set Wedding Party Card Top Margin to 1/2 img outer width + 15px for padding
+$(window).on('load resize',function(){
+  var width = $('.WPCard > img').outerWidth()/2 + 15;
+  $('.WPCard').css('margin-top', width + 'px');
+  console.log("Hey");
+});

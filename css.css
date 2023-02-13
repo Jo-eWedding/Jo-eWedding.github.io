@@ -36,9 +36,16 @@ body::after{
   background: rgba(0,0,0,0.5); 
 }
 
-h1{
+h1, h2, h3, h4, h5, h6{
   font-family: MarchShine;
+}
+
+h1{
   font-size: 5em;
+}
+
+h2{
+  font-size: 3em;
 }
 
 /* ------------------------------ Nav ------------------------------ */
@@ -194,6 +201,42 @@ nav>div>a:hover{
   margin: 10px 0;
   position: absolute;
   left: 0;
+}
+
+.WeddingParty{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.WeddingParty > h1{
+  width: 100%;
+}
+
+.WPCard{
+  background: #fff;
+  display: block;
+  box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.15);
+  border-radius: 15px;
+  margin-top: 10%;
+  gap: 15px;
+}
+
+.WPCard>img{
+  width: 75%;
+  border-radius: 50%;
+  position: relative;
+  top: -15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 15px solid white;
+  margin-bottom: -40%;
+  display: block;
+}
+
+.WPCard{
+  text-align: center;
 }
 
 /* ------------------------------ Media Queries ------------------------------ */

@@ -51,7 +51,7 @@ body{
   display: inline-block;
   white-space: normal;
   margin: 15px;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.15);
   background: #fff;
 }
