@@ -67,7 +67,7 @@ nav{
 }
 
 .NavLogo:hover{
-  filter: invert(52%) sepia(81%) saturate(7490%) hue-rotate(187deg) brightness(93%) contrast(97%) drop-shadow(2px 2px 3px rgba(0,0,0,0.75));
+  filter: brightness(0) saturate(100%) invert(12%) sepia(26%) saturate(7335%) hue-rotate(212deg) brightness(91%) contrast(107%);
 }
 
 nav>div{
