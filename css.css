@@ -4,7 +4,7 @@
   --Accent2: #5c0091;
   --Gold: #FFD700;
 }
-body{overflow-y: overlay;overflow-x: hidden;}
+body{overflow-y: overlay;overflow-x: hidden;font-size: 1.5em;}
 body::after{
   position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
   content:url(img/Prom.jpg) url(img/Arizona.jpg) url(img/BarK.jpg) url(img/Renfest.jpg) url(img/GrainsAndTap.jpg);
@@ -42,10 +42,12 @@ h1, h2, h3, h4, h5, h6{
 
 h1{
   font-size: 5em;
+  text-align: center;
 }
 
 h2{
   font-size: 3em;
+  text-align: center;
 }
 
 /* ------------------------------ Nav ------------------------------ */
@@ -71,6 +73,7 @@ nav{
   height: 40px;
   width: auto;
   filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.75));
+  margin-top: -20px;
 }
 
 .NavLogo:hover{
@@ -137,9 +140,8 @@ nav>div>a:hover{
 
 .CarouselOverlay{
   position: absolute;
-  top: 0;
+  bottom: 5%;
   left: 0;
-  height: 100vh;
   width: 100vw;
   display: grid;
   justify-content: center;
@@ -175,6 +177,7 @@ nav>div>a:hover{
 /* ------------------------------ Content ------------------------------ */
 .ContWrapper{
   background: #ddd;
+  padding-bottom: 100px;
 }
 
 .content{
@@ -184,15 +187,20 @@ nav>div>a:hover{
   background: #fff;
   box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.35);
   padding: 25px;
+  border-radius: 0px 0px 15px 15px;
 }
 
-.content>div:after{
-  content: '';
-  display: block;
-  width: 100%;
-  height: 0;
-  margin: 10px 0;
-  border-bottom: 1px solid #e1e1e1;
+.detailsCont{
+  text-align: center;
+}
+.content p{
+  margin: 15px;
+}
+
+.map{
+  width: calc(100% + 50px);
+  margin-left: -25px;
+  height: 500px;
 }
 
 .Timeline>iframe{
@@ -220,9 +228,9 @@ nav>div>a:hover{
   display: block;
   box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.15);
   border-radius: 15px;
-  margin-top: 10%;
-  gap: 15px;
+  margin: 50px -4px;
   padding-bottom: 25px;
+  width: 45%
 }
 
 .WPCard>img{
@@ -236,6 +244,8 @@ nav>div>a:hover{
   margin-bottom: -40%;
   display: block;
   box-shadow: 0px -5px 10px 5px rgba(0,0,0,0.15);
+  max-width: 500px;
+  height: auto;
 }
 
 .WPCard{
@@ -288,26 +298,37 @@ nav>div>a:hover{
   }
 }
 
-@media (min-width: 1563px){
-  
+@media (max-width: 1563px){
+  .WPCard{
+    width: 75% !important;
+  }
 }
 
 /* ------------------------------ CAROUSEL ------------------------------ */
 /* Carousel Slides */
 .mySlides:nth-child(1) {
-  background-image: url('img/Prom.jpg');
+  background-image: url('img/Hands.jpg');
 }
 .mySlides:nth-child(2) {
-  background-image: url('img/Arizona.jpg');
+  background-image: url('img/Dip.jpg');
 }
 .mySlides:nth-child(3) {
-  background-image: url('img/BarK.jpg');
+  background-image: url('img/Gidget1.jpg');
 }
 .mySlides:nth-child(4) {
-  background-image: url('img/Renfest.jpg');
+  background-image: url('img/GrumpyCat.jpg');
 }
 .mySlides:nth-child(5) {
-  background-image: url('img/GrainsAndTap.jpg');
+  background-image: url('img/Stairs.jpg');
+}
+.mySlides:nth-child(6) {
+  background-image: url('img/Look.jpg');
+}
+.mySlides:nth-child(7) {
+  background-image: url('img/Gidget2.jpg');
+}
+.mySlides:nth-child(8) {
+  background-image: url('img/Schwing.jpg');
 }
 
 .mySlides {display: none}
@@ -383,8 +404,8 @@ img {vertical-align: middle;}
 .dot {
   cursor: pointer;
   height: 50px;
-  width: 20%;
-  margin: -2px;
+  width: 12.5%;
+  margin: -3px;
   display: inline-block;
   z-index: 10;
   transition: top .5s;

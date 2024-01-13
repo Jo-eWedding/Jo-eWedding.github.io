@@ -9,6 +9,11 @@
   --Gold: #FFD700;
 }
 
+body{
+  margin: 0 200px;
+  font-size: 1.5em;
+}
+
 /* width */
 ::-webkit-scrollbar {
   height: 10px;

@@ -95,3 +95,47 @@ $(window).on('load resize',function(){
   $('.WPCard').css('margin-top', width + 'px');
   console.log("Hey");
 });
+
+//Countdown
+// Set vars
+var CDT, CUT, distance;
+
+// Set the date we're counting down to
+var countDownDate = new Date("May 4, 2024 00:16:00").getTime();
+
+// Update the count down every 1 second
+setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now an the count down date
+    distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    CDT = {
+        days : Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours : Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes : Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds : Math.floor((distance % (1000 * 60)) / 1000)
+    }
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+        // Time calculations for days, hours, minutes and seconds
+        CUT = {
+            days : Math.floor(distance / ((1000 * 60 * 60 * 24) * -1)),
+            hours : Math.floor((distance % ((1000 * 60 * 60 * 24)) / (1000 * 60 * 60) * -1)),
+            minutes : Math.floor((distance % ((1000 * 60 * 60)) / (1000 * 60) * -1)),
+            seconds : Math.floor((distance % ((1000 * 60)) / 1000) * -1)
+        }
+    }
+
+    // Display the result
+    if(distance > 0){
+      document.getElementById("CD").innerHTML = CDT.days + " Days " + CDT.hours + " Hours " + CDT.minutes + " Minutes left!"
+    } else {
+      document.getElementById("CD").innerHTML = CDT.days + " Days " + CDT.hours + " Hours " + CDT.minutes + " Minutes since!"
+    }
+
+}, 1000);
