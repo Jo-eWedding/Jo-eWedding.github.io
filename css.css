@@ -2,7 +2,6 @@
 :root{
   --Accent1: #002366;
   --Accent2: #5c0091;
-  --Gold: #FFD700;
 }
 body{overflow-y: overlay;overflow-x: hidden;font-size: 1.5em;}
 body::after{
@@ -48,6 +47,26 @@ h1{
 h2{
   font-size: 3em;
   text-align: center;
+}
+
+/* RSVP Button */
+.rsvp{
+  color: #fff !important;
+  background: var(--Accent2);
+  margin: 10px;
+  height: 20px !important;
+  line-height: 24px;
+  border-radius: 7px;
+  box-shadow: 2.5px 2.5px 5px 2.5px rgba(0,0,0,0.35);
+  padding: 10px 10px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.rsvp:hover,.rsvp:active{
+  background: var(--Accent1);
+  transition: all 0.75s;
+  box-shadow: none;
 }
 
 /* ------------------------------ Nav ------------------------------ */
