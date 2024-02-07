@@ -88,6 +88,8 @@ img{
   max-width: calc(100vw - 30px);
   height: auto;
   border-radius: 15px 15px 0 0;
+  position: relative;
+  width: 100%;
 }
 
 .info{
