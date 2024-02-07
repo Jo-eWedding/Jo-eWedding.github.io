@@ -69,6 +69,27 @@ h2{
   box-shadow: none;
 }
 
+/* Registry Button */
+.registry{
+  color: #fff !important;
+  background: var(--Accent1);
+  margin: 10px;
+  height: 20px !important;
+  line-height: 24px;
+  border-radius: 7px;
+  box-shadow: 2.5px 2.5px 5px 2.5px rgba(0,0,0,0.35);
+  padding: 10px 10px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.registry:hover,.registry:active{
+  background: var(--Accent2);
+  transition: all 0.75s;
+  box-shadow: none;
+}
+
+
 /* ------------------------------ Nav ------------------------------ */
 .img-res{
   width: 100%;
